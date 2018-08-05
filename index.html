@@ -13,27 +13,42 @@
   	<link rel="stylesheet" media="screen" href="style.css">
 	</head>
   <body>
-    <h1>Speech synthesiser</h1>
-    <form>
-      <input type="text" class="txt">
-      <div>
-        <label for="rate">Rate</label>
-        <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
-        <div class="rate-value">1</div>
-        <div class="clearfix"></div>
-      </div>
-      <div>
-        <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-        <div class="pitch-value">1</div>
-        <div class="clearfix"></div>
-      </div>
-      <select>
-      </select>
+    <div class="section">
+      <h1>Speech synthesiser</h1>
+      <form>
+        <input type="text" id="input-tts" placeholder="Texto a convertir a voz">
+        <div class="range-selector">
+          <label class="range-label" for="rate">Rate:</label>
+          <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+          <div class="rate-value">1</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="range-selector">
+          <label class="range-label" for="pitch">Pitch:</label>
+          <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+          <div class="pitch-value">1</div>
+          <div class="clearfix"></div>
+        </div>
+        <select id="voice-selector"></select>
+        <div class="controls">
+          <button class="icon-button" type="submit" id="play">
+            <img src="images/speaker.png" alt="Speaker" />
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="section">
+      <h1>Speech parser</h1>
       <div class="controls">
-        <button id="play" type="submit">Play</button>
+        <button class="icon-button" type="submit" id="listen">
+          <img src="images/microphone.png" alt="Microphone" />
+        </button>
       </div>
-    </form>
+      <input type="text" id="output-stt" disabled placeholder="Texto obtenido de la voz">
+      <input type="text" id="output-stt-confidence" disabled placeholder="Nivel de confianza">
+    </div>
     <!-- Basic JS -->
-    <script src="app.js"></script>
+    <script src="tts-app.js"></script>
+    <script src="stt-app.js"></script>
   </body>
 </html>

@@ -1,8 +1,5 @@
-body, html {
-  margin: 0;
-}
-
 html {
+  margin: 0;
   height: 100%;
 }
 
@@ -10,6 +7,20 @@ body {
   height: 90%;
   max-width: 800px;
   margin: 0 auto;
+  font-size: 0;
+}
+
+.section {
+  width: 100%;
+  max-width: 380px;
+  margin: 40px 10px;
+  display: inline-block;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  vertical-align: top;
+  padding: 8px;
 }
 
 h1, p {
@@ -18,7 +29,24 @@ h1, p {
   padding: 20px;
 }
 
-.txt, select, form > div {
+#input-tts, #output-stt, #output-stt-confidence {
+  width: 80%;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: block;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+#voice-selector {
+  width: 83%;
   display: block;
   margin: 0 auto;
   font-family: sans-serif;
@@ -26,20 +54,18 @@ h1, p {
   padding: 5px;
 }
 
-.txt {
-  width: 80%;
-}
-
-select {
-  width: 83%;
-}
-
-form > div {
+.range-selector {
   width: 81%;
+  display: block;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 5px;
 }
 
-.txt, form > div {
+.range-selector {
   margin-bottom: 10px;
+  margin-top: 10px;
   overflow: auto;
 }
 
@@ -47,28 +73,49 @@ form > div {
   clear: both;
 }
 
-label {
+.range-label {
   float: left;
-  width: 10%;
+  width: 15%;
   line-height: 1.5;
 }
 
 .rate-value, .pitch-value {
   float: right;
-  width: 5%;
+  width: 8%;
   line-height: 1.5;
+  text-align: center;
 }
 
 #rate, #pitch {
   float: right;
-  width: 81%;
+  width: 75%;
 }
 
 .controls {
   text-align: center;
-  margin-top: 10px;
+  margin: 25px auto;
 }
 
-.controls button {
-  padding: 10px;
+.icon-button {
+  width: 120px;
+  height: 120px;
+  border: 5px solid black;
+  border-radius: 50%;
+  outline: none;
+  background: white;
+  text-align: center;
+  line-height: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation--heartbeat {
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
